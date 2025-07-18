@@ -1,0 +1,14 @@
+<div class="notification-container" [class]="'notification-' + data.type" [class.center-confirm]="data.type === 'confirm'">
+  <div class="notification-content">
+    <mat-icon class="notification-icon">{{icon}}</mat-icon>
+    <div class="notification-message">{{data.message}}</div>
+  </div>
+  <div class="notification-actions">
+    <button mat-button *ngIf="data.type === 'confirm'" (click)="onClose()">
+      {{data.cancelAction}}
+    </button>
+    <button mat-button (click)="onAction()" [class.confirm-button]="data.type === 'confirm'">
+      {{data.action}}
+    </button>
+  </div>
+</div>

@@ -1,0 +1,50 @@
+<div class="login-container">
+    <div class="login-card">
+        <mat-card class="login-form-card">
+            <mat-card-header class="login-header">
+                <mat-card-title class="login-title">
+                    <mat-icon class="login-icon">code</mat-icon>
+                    Test-Roiner Gomez
+                </mat-card-title>
+                <mat-card-subtitle>Inicia sesión para continuar</mat-card-subtitle>
+            </mat-card-header>
+
+            <mat-card-content>
+                <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="login-form">
+                    <mat-form-field appearance="outline" class="full-width">
+                        <mat-label>Email</mat-label>
+                        <input matInput type="email" formControlName="email" placeholder="Ingresa tu email">
+                        <mat-icon matSuffix>email</mat-icon>
+                        <mat-error *ngIf="loginForm.get('email')?.invalid && loginForm.get('email')?.touched">
+                            {{ getErrorMessage('email') }}
+                        </mat-error>
+                    </mat-form-field>
+
+                    <mat-form-field appearance="outline" class="full-width">
+                        <mat-label>Contraseña</mat-label>
+                        <input matInput [type]="hidePassword ? 'password' : 'text'" formControlName="password"
+                            placeholder="Ingresa tu contraseña">
+                        <button mat-icon-button matSuffix (click)="hidePassword = !hidePassword" type="button">
+                            <mat-icon>{{hidePassword ? 'visibility_off' : 'visibility'}}</mat-icon>
+                        </button>
+                        <mat-error *ngIf="loginForm.get('password')?.invalid && loginForm.get('password')?.touched">
+                            {{ getErrorMessage('password') }}
+                        </mat-error>
+                    </mat-form-field>
+                    <button mat-raised-button color="primary" type="submit" [disabled]="isLoading"
+                        class="login-button full-width">
+
+                        <div class="button-content" [class.hidden]="isLoading">
+                            Iniciar Sesión
+                        </div>
+
+                        <div class="spinner-container" [class.active]="isLoading">
+                            <mat-spinner diameter="20" strokeWidth="3"></mat-spinner>
+                            <span class="loading-text">Iniciando...</span>
+                        </div>
+                    </button>
+                </form>
+            </mat-card-content>
+        </mat-card>
+    </div>
+</div>

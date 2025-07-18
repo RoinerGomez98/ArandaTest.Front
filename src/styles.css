@@ -1,1 +1,28 @@
-/* You can add global styles to this file, and also import other style files */
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.mdc-snackbar__surface.mat-mdc-snackbar-surface {
+    background-color: transparent !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+    border-radius: 0 !important;
+    display: flex;
+    justify-content: center;
+}
+
+.span.mdc-button__label {
+    color: aliceblue !important;
+}
+
+.mat-toolbar-row,
+.mat-toolbar-single-row {
+    background: linear-gradient(to bottom, rgb(101, 106, 193), rgb(80, 85, 160));
+    color: aliceblue;
+}

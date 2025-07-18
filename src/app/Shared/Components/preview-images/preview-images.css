@@ -1,0 +1,12 @@
+ .dialog-image-content {
+     padding: 0;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+ }
+
+ .dialog-image {
+     max-width: 100%;
+     max-height: 80vh;
+     border-radius: 8px;
+ }

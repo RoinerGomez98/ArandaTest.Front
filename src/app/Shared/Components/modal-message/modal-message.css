@@ -1,0 +1,75 @@
+.notification-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  color: white;
+  min-width: 300px;
+  max-width: 450px;
+  margin: auto;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.notification-content {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex: 1;
+}
+
+.notification-icon {
+  font-size: 28px;
+}
+
+.notification-message {
+  font-size: 15px;
+  line-height: 1.4;
+}
+
+.notification-actions {
+  display: flex;
+  gap: 8px;
+  margin-left: 12px;
+}
+
+.notification-success {
+  background-color: #4caf50;
+}
+
+.notification-error {
+  background-color: #f44336;
+}
+
+.notification-warning {
+  background-color: #ff9800;
+}
+
+.notification-info {
+  background-color: #2196f3;
+}
+
+.notification-confirm {
+  background-color: #607d8b;
+}
+
+.center-confirm-backdrop {
+  background: rgba(0, 0, 0, 0.35) !important;
+}
+
+.center-confirm {
+  max-width: 500px !important;
+  border-radius: 8px;
+  background-color: #455a64;
+}
+
+.confirm-button {
+  font-weight: bold;
+  color: #fff;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to   { opacity: 1; transform: scale(1); }
+}
